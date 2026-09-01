@@ -1,12 +1,12 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const heroSlides = document.querySelectorAll('.hero-slide');
-if (heroSlides.length > 1) {
+const aboutSlides = document.querySelectorAll('.about-slide');
+if (aboutSlides.length > 1) {
   let activeSlide = 0;
   setInterval(() => {
-    heroSlides[activeSlide].classList.remove('active');
-    activeSlide = (activeSlide + 1) % heroSlides.length;
-    heroSlides[activeSlide].classList.add('active');
+    aboutSlides[activeSlide].classList.remove('active');
+    activeSlide = (activeSlide + 1) % aboutSlides.length;
+    aboutSlides[activeSlide].classList.add('active');
   }, 5000);
 }
 
