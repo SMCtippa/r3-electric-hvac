@@ -70,6 +70,17 @@ bytes to disk), so Kyle dragged them into Finder himself — they first landed i
 site's own real work photos. Recovered via `git checkout -- assets/work/` in that repo before
 moving the correct files over to `r3-electric-hvac/assets/work/`.
 
+**Image quality**: the pasted photos came through at thumbnail resolution (173px wide) rather than
+their original size — no full-res originals were found anywhere on disk (checked Downloads,
+Desktop, and system temp/cache dirs). Raw 173px files are kept in `assets/work/originals-lowres/`
+for reference. The in-use files were upscaled with `sips --resampleWidth 900` (smooth resampling,
+no real detail added — just removes blockiness) and the CSS pairs that with a light `blur(2px)` +
+`scale(1.04)` and a slightly darker scrim (`.hero-slide`/`.hero-scrim` in styles.css) so the
+background reads as an intentionally soft, moody photo rather than a pixelated one. This is the
+practical ceiling without genuine full-resolution source photos — if Kyle finds the originals
+later (e.g. on his phone's camera roll), drop them into `assets/work/` with the same filenames for
+a real sharpness upgrade.
+
 ## Contact form
 
 The quote request form posts to Formspree. Before it will actually send email, replace
