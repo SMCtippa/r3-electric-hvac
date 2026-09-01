@@ -207,7 +207,7 @@ a { color: inherit; text-decoration: none; }
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-size: contain;
+  background-size: auto 220px;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
