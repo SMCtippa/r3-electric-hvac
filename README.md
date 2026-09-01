@@ -73,13 +73,15 @@ moving the correct files over to `r3-electric-hvac/assets/work/`.
 **Image quality**: the pasted photos came through at thumbnail resolution (173px wide) rather than
 their original size — no full-res originals were found anywhere on disk (checked Downloads,
 Desktop, and system temp/cache dirs). Raw 173px files are kept in `assets/work/originals-lowres/`
-for reference. The in-use files were upscaled with `sips --resampleWidth 900` (smooth resampling,
-no real detail added — just removes blockiness) and the CSS pairs that with a light `blur(2px)` +
-`scale(1.04)` and a slightly darker scrim (`.hero-slide`/`.hero-scrim` in styles.css) so the
-background reads as an intentionally soft, moody photo rather than a pixelated one. This is the
-practical ceiling without genuine full-resolution source photos — if Kyle finds the originals
-later (e.g. on his phone's camera roll), drop them into `assets/work/` with the same filenames for
-a real sharpness upgrade.
+for reference. The in-use files are a Python/Pillow reprocess of those originals: Lanczos upscale
+to 900px wide, an unsharp mask (radius 2, 160%, threshold 2) to bring back edge definition, plus a
+small contrast/saturation boost — noticeably crisper than a plain resize, since sharpening restores
+perceived detail that a straight upscale (tried first, via `sips --resampleWidth`) can't. No CSS
+blur on the hero background as a result (`.hero-slide` in styles.css just has a `saturate(1.1)`
+filter). This is the practical ceiling without genuine full-resolution source photos — sharpening
+can't invent detail that isn't there, it only makes the existing 173px worth of information look
+as defined as possible. If Kyle finds the real originals later (e.g. his phone's camera roll), drop
+them into `assets/work/` with the same filenames for a genuine sharpness upgrade.
 
 ## Contact form
 
